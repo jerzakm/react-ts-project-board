@@ -13,3 +13,9 @@ const TrelloCard = ()=> {
 }
 
 export default TrelloCard
+
+
+export interface ITrelloCard {
+  id: string,
+  text: string
+}

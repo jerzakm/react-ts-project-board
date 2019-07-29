@@ -1,5 +1,5 @@
 import React from 'react'
-import TrelloCard from './TrelloCard';
+import TrelloCard, { ITrelloCard } from './TrelloCard';
 
 
 const TrelloList = ({title}: any)=> {
@@ -21,3 +21,9 @@ const styles = {
 }
 
 export default TrelloList
+
+export interface ITrelloList {
+  title: string,
+  id: string,
+  cards: ITrelloCard[]
+}
