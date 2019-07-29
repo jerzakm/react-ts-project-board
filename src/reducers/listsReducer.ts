@@ -8,7 +8,15 @@ const initialState:ITrelloList[] = [
       {id: '1', text: 'Una matina'},
       {id: '2', text: 'bella ciao'}
     ]
-  }
+  },
+  {
+    title: 'TestList2',
+    id: '2',
+    cards: [
+      {id: '1', text: 'Una matina'},
+      {id: '2', text: 'bella ciao'}
+    ]
+  },
 ]
 
 const listsReducer = (state = initialState, action: any) => {

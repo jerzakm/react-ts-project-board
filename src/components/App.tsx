@@ -7,12 +7,22 @@ class App extends Component {
     const { lists }:any = this.props
     return (
       <div className="App">
-        <h1>testing...</h1>
-        { lists.map((list: { title: any; cards: any; }) =>
-          <TrelloList title={list.title} cards={list.cards}/>
-        )}
+        <h1>Project board</h1>
+        <div style={styles.listsContainer}>
+          { lists.map((list: { title: any; cards: any; }) =>
+            <TrelloList title={list.title} cards={list.cards}/>
+          )}
+        </div>
       </div>
     )
+  }
+}
+
+const styles = {
+  listsContainer: {
+    display: 'flex',
+    'flex-direction': 'row',
+    marginRight: 8
   }
 }
 
