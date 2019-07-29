@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TrelloList from "./TrelloList";
 
 
 class App extends Component {
@@ -6,6 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>testing...</h1>
+        <TrelloList title="test"/>
       </div>
     )
   }
