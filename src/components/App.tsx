@@ -1,19 +1,24 @@
-import React, { Component } from "react"
-import TrelloList, { ITrelloList } from "./TrelloList"
+import React, { Component } from 'react'
+import TrelloList, { ITrelloList } from './TrelloList'
 import { connect } from 'react-redux'
-import TrelloActionButton from "./TrelloActionButton";
+import TrelloActionButton from './TrelloActionButton'
 
 class App extends Component {
-  render(){
-    const { lists }:any = this.props
+  render() {
+    const { lists }: any = this.props
     return (
       <div className="App">
         <h1>Project board</h1>
         <div style={styles.listsContainer}>
-          { lists.map((list: ITrelloList) =>
-            <TrelloList key={list.id} title={list.title} cards={list.cards}/>
-          )}
-          <TrelloActionButton list/>
+          {lists.map((list: ITrelloList) => (
+            <TrelloList
+              listID={list.id}
+              key={list.id}
+              title={list.title}
+              cards={list.cards}
+            />
+          ))}
+          <TrelloActionButton list listID={lists.id} />
         </div>
       </div>
     )
@@ -28,8 +33,8 @@ const styles = {
   }
 }
 
-const mapStateToProps = (state:any) => ({
+const mapStateToProps = (state: any) => ({
   lists: state.lists
 })
 
-export default connect(mapStateToProps) (App)
+export default connect(mapStateToProps)(App)

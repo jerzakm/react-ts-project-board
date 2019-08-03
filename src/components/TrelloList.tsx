@@ -1,16 +1,15 @@
 import React from 'react'
-import TrelloCard, { ITrelloCard } from './TrelloCard';
-import TrelloActionButton from './TrelloActionButton';
+import TrelloCard, { ITrelloCard } from './TrelloCard'
+import TrelloActionButton from './TrelloActionButton'
 
-
-const TrelloList = ({title, cards}: any)=> {
-  return(
+const TrelloList = ({ title, cards, listID }: any) => {
+  return (
     <div style={styles.container}>
       <h4>{title}</h4>
-      { cards.map((card: any) => (
-        <TrelloCard key={card.id} text={card.text}/>
-      )) }
-      <TrelloActionButton/>
+      {cards.map((card: any) => (
+        <TrelloCard key={card.id} text={card.text} />
+      ))}
+      <TrelloActionButton listID={listID} />
     </div>
   )
 }
@@ -29,7 +28,7 @@ const styles = {
 export default TrelloList
 
 export interface ITrelloList {
-  title: string,
-  id: string,
+  title: string
+  id: string
   cards: ITrelloCard[]
 }
